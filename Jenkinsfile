@@ -18,7 +18,7 @@ pipeline{
 		
 		stage("Start container"){
 			steps{
-			 sh 'docker compose up -d --wait'
+			 sh 'docker compose up -D --wait'
 			 sh 'docker compose ps'
 			}
 		}
