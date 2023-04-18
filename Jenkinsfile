@@ -11,7 +11,7 @@
 		}
 		stage("Prune docker data"){
 			steps{
-			 sh 'docker system prune -a --volumes -f'
+			 //sh 'docker system prune -a --volumes -f'
 			}
 		}
 		
@@ -30,7 +30,7 @@
 	
 	post{
 		always{
-		 sh 'docker compose down --remove-orphans -v'
+		 //sh 'docker compose down --remove-orphans -v'
 		 sh 'docker compose ps'
 		}
 	}
