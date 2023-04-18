@@ -13,6 +13,7 @@ pipeline{
 		stage("Prune docker data"){
 			steps{
 			 //sh 'docker system prune -a --volumes -f'
+			   sh 'docker ps'	
 			}
 		}
 		
