@@ -10,30 +10,5 @@ pipeline{
 			'''
 		 }
 		}
-		stage("Prune docker data"){
-			steps{
-			 //sh 'docker system prune -a --volumes -f'
-			   sh 'docker ps'	
-			}
-		}
-		
-		stage("Start container"){
-			steps{
-			 sh 'docker compose up -d --no-color --wait'
-			 sh 'docker compose ps'
-			}
-		}
-		stage("Run test"){
-			steps{
-			 sh 'docker run hello-world'
-			}
-		}
-	}
-	
-	post{
-		always{
-		 //sh 'docker compose down --remove-orphans -v'
-		 sh 'docker compose ps'
-		}
 	}
 }
