@@ -18,7 +18,7 @@ pipeline{
 		
 		stage("Start container"){
 			steps{
-			 sh 'docker-compose up -d --wait'
+			 sh 'docker-compose up -d'
 			 sh 'docker-compose ps'
 			}
 		}
@@ -31,8 +31,8 @@ pipeline{
 	
 	post{
 		always{
-		 sh 'docker compose down --remove-orphans -v'
-		 sh 'docker compose ps'
+		 sh 'docker-compose down --remove-orphans -v'
+		 sh 'docker-compose ps'
 		}
 	}
 }
