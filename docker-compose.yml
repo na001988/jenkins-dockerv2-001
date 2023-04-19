@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 services:
   echo-server:
    image: ealen/echo-server:latest
